@@ -27,8 +27,7 @@ module.exports = {
       if (args.join(" ").length > 32){
         return message.reply({embeds: [new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`:x: Bot Name too long, can't have more then 32 Letters!`)
+          .setTitle(`:x: Bot ismi 32 karakterden uzun olamaz.`)
         ]});
       }
       //set a user
@@ -37,15 +36,14 @@ module.exports = {
           //send success message
           return message.reply({embeds: [new MessageEmbed()
             .setColor(ee.color)
-            .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`Changed my Name to: \`${user.username}\``)
+            .setTitle(`Yeni bot ismi : \`${user.username}\``)
           ]});
         })
         .catch(e => {
           //send error message
           return message.reply({embeds: [new MessageEmbed()
-            .setColor(ee.wrongcolor).setFooter(ee.footertext, ee.footericon)
-            .setTitle(`:x: Something went Wrong`)
+            .setColor(ee.wrongcolor)
+            .setTitle(`:x: Birşeyler ters gitti`)
             .setDescription(`\`\`\`${String(JSON.stringify(e)).substr(0, 2000)}\`\`\``)
           ]});
         });
@@ -54,7 +52,7 @@ module.exports = {
       return message.reply({embeds: [new MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`❌ ERROR | An error occurred`)
+          .setTitle(`❌ HATA | Bir hata oluştu`)
           .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
       ]});
     }
