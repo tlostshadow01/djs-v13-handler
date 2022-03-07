@@ -1,0 +1,69 @@
+{
+    "bilmiyorsan": "If you do not know how to use it, write \"language help\"",
+"game":{
+
+ "gg": "Game Ended",
+
+ "davet": "{opponent}, {challenger} invited you to a game of tic tac toe.",
+
+"wait": "opponent waiting...",
+
+ "sıra": "Its {emoji} | now **{player}** turn!",
+
+ "cancel": "Tic Tac Toe oynununu reddetti.",
+
+ "timeend": "Game timed out .",
+
+ "draw": "Draw!",
+
+ "win": "{emoji} | **{winner}** won the game",
+
+  "end": "Game not finished"
+
+    
+
+},
+    "dil":{
+      "kanalb": "Only one game can occur per channel.",
+      "afk": "You switched to afk mode. Reason:",
+      "afk2": "congratulations!",
+        "args0": "If you do not know how to use it, write \"**language help**\"",
+        "args1": "Select an option \"**en / tr**\"",
+        "help": "`\n**language set (en/tr)**: Changes the Bot's Language to the Language You Want\n**language reset**: Resets the Bot's Language\n**language help**: Shows Language Change Commands`",
+       "adam": "Hangman",
+    "iyi": "You are good!",
+    "daat": "Wrong letter!",
+    "zamann": "Your Time Is Out!",
+    "tebrik": "Congratulations You Found The Word!",
+    "akelime": "Unfortunately the man died was the word:",
+    "kelime": "Word",
+    "yanlisharf": "Incorrect Letters:",
+    "yokk": "No"
+    },
+"system":{
+
+"cooldown": "Wait %{timeleft}% before using `%{commandname}%` command",
+
+"yetki": "You dont have %{permissions}% permissons",
+
+"rol": "You must have one of the following roles %{commandrequiredroles}%",
+
+"user": "You must have one of the following users:\n> %{commandalloweduserids}%",
+
+"usage": "Usage",
+
+"wrong": "Wrong Command Usage",
+
+"titlehata": "`%{commandname}%` something went wrong",
+
+"dschata": "```%{errormessage}%```",
+
+"unknow": "Unknow Command **`%{prefix}%yardım`**"
+
+},
+    "ping":{
+        "cevap": "`My Ping`"
+        }
+ 
+  }
+ 
