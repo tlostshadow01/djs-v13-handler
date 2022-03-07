@@ -1,12 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-
 const db = require("quick.db");
-
-
 const config = require("../../botconfig/config.json");
-
 const ee = require("../../botconfig/embed.json");
-
 const settings = require("../../botconfig/settings.json");
 
 module.exports = {
@@ -44,24 +39,18 @@ module.exports = {
     run: async (client, message, args, plusArgs, cmdUser, text, prefix) => {
 
 var en = require("../../language/english");
-
-
-  var tr = require("../../language/turkish");
-
-  var dil = db.fetch(`language_${message.guild.id}`);
+var tr = require("../../language/turkish");
+  
+var dil = db.fetch(`language_${message.guild.id}`);
 
   if (dil == "en") {
 
     var lang = en;
-
-  }
-
-  
+ }
 
   if (!dil) {
 
     var lang = tr;
-
   }
 
   if (!args[0]) return message.reply({content: `${lang.dil.args0}`});
@@ -77,9 +66,7 @@ var en = require("../../language/english");
       db.delete(`language_${message.guild.id}`);
 
       return message.reply({ content: "Dil Başarıyla Türkçe Olarak Değiştirildi."});
-
     }
-
 
     if (args[1] == "en") {
 
@@ -88,7 +75,6 @@ var en = require("../../language/english");
       db.set(`language_${message.guild.id}`, "en");
 
       return message.reply({ content: "Language Successfully Changed to English"});
-
     }
 
   }
@@ -98,12 +84,6 @@ var en = require("../../language/english");
     db.delete(`language_${message.guild.id}`);
 
     return message.reply({content: "Dil Başarıyla Sıfırlandı."});
-
-  }
-
-  if (args[0] == "yardım" || args[0] == "help") {
-
-    message.reply({content:`${lang.dil.help}`});
 
   }
         }}
