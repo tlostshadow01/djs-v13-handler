@@ -55,7 +55,6 @@ const {
         .replace(/%{commandaliases}%/gi, options && options.command && options.command.aliases ? options.command.aliases.map(v => `\`${v}\``).join(",") : "%{commandaliases}%")
         .replace(/%{prefix}%/gi, options && options.prefix ? options.prefix : "%{prefix}%")
         .replace(/%{commandmemberpermissions}%/gi, options && options.command && options.command.memberpermissions ? options.command.memberpermissions.map(v => `\`${v}\``).join(",") : "%{commandmemberpermissions}%")
-      //burası Türkçe kısım
         .replace(/%{commandpermissions}%/gi, options && options.command && options.command.permissions ? options.command.permissions.map(v => `\`${v}\``).join(",") : "%{commandpermissions}%")
         .replace(/%{commandalloweduserids}%/gi, options && options.command &&options.command.alloweduserids ? options.command.alloweduserids.map(v => `<@${v}>`).join(",") : "%{commandalloweduserids}%")
         .replace(/%{commandrequiredroles}%/gi, options && options.command &&options.command.requiredroles ? options.command.requiredroles.map(v => `<@&${v}>`).join(",") : "%{commandrequiredroles}%")
