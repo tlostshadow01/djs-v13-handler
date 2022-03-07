@@ -44,7 +44,7 @@
 
 "cooldown": "Wait %{timeleft}% before using `%{commandname}%` command",
 
-"yetki": "You dont have %{permissions}% permissons",
+"yetki": "You dont have %{commandmemberpermissions}% permissons",
 
 "rol": "You must have one of the following roles %{commandrequiredroles}%",
 
