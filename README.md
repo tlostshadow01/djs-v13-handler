@@ -3,16 +3,16 @@
 
 ***
 
-## Kurulum Klavuzu
+## Kurulum Bilgilendirme
 
 <br/>
-- gerekir **node.js v16.6 yada üstü**
+- **node.js v16.6 yada üstü gerekir**
 
-- içine `./botconfig/config.json` BOTTOKEN ve PREFIX'i ayarlayın
+- `./botconfig/config.json` içine BOTTOKEN ve PREFIX'i ayarlayın
 
-- içine `./botconfig/settings.json` VARSAYILAN MESAJLARI ve DİĞER ayarları yapın
+- `./botconfig/settings.json` içine VARSAYILAN MESAJLARI ve DİĞER ayarları yapın
 
-- içine `./botconfig/embed.json` EMBED ayarlarını yapın
+- `./botconfig/embed.json` içine EMBED ayarlarını yapın
 
 - `npm install` Modülleri yüklemek için
 
