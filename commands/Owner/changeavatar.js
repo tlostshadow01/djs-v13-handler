@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 module.exports = {
   name: "changeavatar",
   category: "Owner",
-  aliases: ["changebotavatar", "botavatar", "botprofilepicture", "botpfp"],
+  aliases: ["changebotavatar", "botavatar", "botprofilepicture", "botpfp","avatardeğiştir"],
   cooldown: 5,
   usage: "changeavatar <Imagelink/Image>",
   description: "Changes the Avatar of the BOT: I SUGGEST YOU TO DO IT LIKE THAT: Type the command in the Chat, attach an Image to the Command (not via link, just add it) press enter",
@@ -37,7 +37,7 @@ module.exports = {
           const buffer = await response.buffer();
           //write the file and log the state
           await fs.writeFile(`./image.jpg`, buffer, () =>{
-            console.log('finished downloading!')
+            console.log('indirme bitti!')
           });
           //set the avatar from the file
           client.user.setAvatar(`./image.jpg`)
@@ -48,23 +48,21 @@ module.exports = {
               } catch {}
               //send a success message
               return message.reply({embeds: [new MessageEmbed()
-                .setTitle(`Successfully, changed the Bot avatar!`)
+                .setTitle(`Başarıyla botun avatarı değiştirildi!`)
                 .setColor(ee.color)
-                .setFooter(ee.footertext, ee.footericon)
               ]});
             })
             .catch(e => {
               //send an error message
               return message.reply({embeds: [new MessageEmbed()
                 .setColor(ee.wrongcolor)
-                .setFooter(ee.footertext, ee.footericon)
-                .setTitle(`:x: Something went Wrong`)
+                .setTitle(`:x: Birşeyler ters gitti`)
                 .setDescription(`\`\`\`${String(JSON.stringify(e)).substr(0, 2000)}\`\`\``)
               ]});
             });
         } else {
           return message.reply({embeds: [new MessageEmbed()
-            .setTitle(`:x: ERROR | Could not use your Image as an Avatar, make sure it is a \`png\` / \`jpg\``)
+            .setTitle(`:x: HATA / Resminizi Avatar olarak kullanamadı, bunun bir \ `png \` / \`jpg \' olduğundan emin olun.`)
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
           ]});
@@ -74,7 +72,7 @@ module.exports = {
         const response = await fetch(url);
         const buffer = await response.buffer();
         await fs.writeFile(`./image.jpg`, buffer, () =>
-          console.log('finished downloading!'));
+          console.log('indirme bitti!'));
         client.user.setAvatar(`./image.jpg`)
           .then(user => {
             try {
@@ -83,26 +81,23 @@ module.exports = {
 
             }
             return message.reply({embeds: [new MessageEmbed()
-              .setTitle(`Successfully, changed the Bot avatar!`)
+              .setTitle(`Başarıyla botun avatarı değiştirildi!`)
               .setColor(ee.color)
-              .setFooter(ee.footertext, ee.footericon)
             ]});
           })
           .catch(e => {
             return message.reply({embeds: [new MessageEmbed()
               .setColor(ee.wrongcolor)
-              .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`:x: Something went Wrong`)
+              .setTitle(`:x: Birşeyler ters gitti`)
               .setDescription(`\`\`\`${String(JSON.stringify(e)).substr(0, 2000)}\`\`\``)
             ]});
           });
 
       } else {
         return message.reply({embeds: [new MessageEmbed()
-          .setTitle(`:x: ERROR | Could not use your Image as an Avatar, make sure it is a \`png\` / \`jpg\` / \`webp\``)
-          .setDescription(`Useage: \`${prefix}changeavatar <AVATARLINK/IMAGE>\``)
+          .setTitle(`:x: HATA / Resminizi Avatar olarak kullanamadı, bunun bir \ `png \` / \`jpg \' olduğundan emin olun.`)
+          .setDescription(`Kullanımı: \`${prefix}avatardeğiştir <AVATARLINK/RESİM>\``)
           .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
         ]});
       }
 
@@ -124,8 +119,7 @@ module.exports = {
       console.log(String(e.stack).bgRed)
       return message.reply({embeds: [new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`❌ ERROR | An error occurred`)
+          .setTitle(`❌ Hata | Birşeyler ters gitti`)
           .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
       ]});
     }
