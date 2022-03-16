@@ -560,7 +560,6 @@ function onCoolDown(message, command) {
              .setDescription(current)
              .setTitle(TITLE)
              .setColor(ee.color)
-             .setFooter(ee.footertext, ee.footericon)
            embeds.push(embed);
          }
          embeds;
@@ -575,7 +574,6 @@ function onCoolDown(message, command) {
              .setDescription(current)
              .setTitle(TITLE)
              .setColor(ee.color)
-             .setFooter(ee.footertext, ee.footericon)
            embeds.push(embed);
          }
          embeds;
