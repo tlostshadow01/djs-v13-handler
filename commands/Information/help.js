@@ -24,25 +24,25 @@ module.exports = {
           const embed = new MessageEmbed();
           const cmd = client.commands.get(args[0].toLowerCase()) || client.commands.get(client.aliases.get(args[0].toLowerCase()));
           if (!cmd) {
-              return message.reply({embeds: [embed.setColor(ee.wrongcolor).setDescription(`No Information found for command **${args[0].toLowerCase()}**`)]});
+              return message.reply({embeds: [embed.setColor(ee.wrongcolor).setDescription(`**${args[0].toLowerCase()}** komutu için bilgilendirme bulunamadı.`)]});
           }
-          if (cmd.name) embed.addField("**Command name**", `\`${cmd.name}\``);
-          if (cmd.name) embed.setTitle(`Detailed Information about:\`${cmd.name}\``);
-          if (cmd.description) embed.addField("**Description**", `\`${cmd.description}\``);
-          if (cmd.aliases) embed.addField("**Aliases**", `\`${cmd.aliases.map((a) => `${a}`).join("`, `")}\``);
-          if (cmd.cooldown) embed.addField("**Cooldown**", `\`${cmd.cooldown} Seconds\``);
-          else embed.addField("**Cooldown**", `\`${settings.default_cooldown_in_sec} Second\``);
+          if (cmd.name) embed.addField("**Komut adı**", `\`${cmd.name}\``);
+          if (cmd.name) embed.setTitle(`Hakkında detaylı bilgi:\`${cmd.name}\``);
+          if (cmd.description) embed.addField("**Açıklama**", `\`${cmd.description}\``);
+          if (cmd.aliases) embed.addField("**Diğer kullanımlar**", `\`${cmd.aliases.map((a) => `${a}`).join("`, `")}\``);
+          if (cmd.cooldown) embed.addField("**Yavaşmod**", `\`${cmd.cooldown} Saniye\``);
+          else embed.addField("**Yavaşmod**", `\`${settings.default_cooldown_in_sec} Second\``);
           if (cmd.usage) {
-              embed.addField("**Usage**", `\`${prefix}${cmd.usage}\``);
-              embed.setFooter("Syntax: <> = required, [] = optional");
+              embed.addField("**Kullanımı**", `\`${prefix}${cmd.usage}\``);
+              embed.setFooter("Sözdizimi: <> = required, [] = optional");
           }
           return message.reply({embeds: [embed.setColor(ee.color)]});
         } else {
           const embed = new MessageEmbed()
               .setColor(ee.color)
               .setThumbnail(client.user.displayAvatarURL())
-              .setTitle("HELP MENU 🔰 Commands")
-              .setFooter(`To see command Descriptions and Information, type: ${prefix}help [CMD NAME]`, client.user.displayAvatarURL());
+              .setTitle("YARDIM MENÜSÜ 🔰 Komutlar")
+              .setFooter(`Tüm komutların açıklamasını ve bilgilendirmesini görmek için : ${prefix}yardım [KOMUT İSMİ] yazın`, client.user.displayAvatarURL());
           const commands = (category) => {
               return client.commands.filter((cmd) => cmd.category === category).map((cmd) => `\`${cmd.name}\``);
           };
@@ -61,8 +61,7 @@ module.exports = {
         console.log(String(e.stack).bgRed)
         return message.reply({embeds: [new MessageEmbed()
             .setColor(ee.wrongcolor)
-            .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`❌ ERROR | An error occurred`)
+            .setTitle(`❌ Hata | Bir hata oluştu`)
             .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
         ]});
     }
