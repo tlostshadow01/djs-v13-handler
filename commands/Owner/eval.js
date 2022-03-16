@@ -45,7 +45,7 @@ module.exports = {
       if (string.includes(client.token)) return console.log(`ERROR NO TOKEN GRABBING ;)`.red);
       //define queueembed
       let evalEmbed = new MessageEmbed()
-        .setTitle(`${client.user.username} | Evaluation`)
+        .setTitle(`${client.user.username} | Eval`)
         .setColor(ee.color);
       //split the description
       const splitDescription = splitMessage(string, {
@@ -67,8 +67,7 @@ module.exports = {
     } catch (e) {
       return message.reply({embeds: [new MessageEmbed()
           .setColor(ee.wrongcolor)
-          .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`❌ ERROR | An error occurred`)
+          .setTitle(`❌ Hata | Birşeyler ters gitti`)
           .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
       ]});
     }
