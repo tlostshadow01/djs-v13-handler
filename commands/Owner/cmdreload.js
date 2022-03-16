@@ -43,9 +43,8 @@ module.exports = {
             ]});
           } catch (e) {
             return message.reply({embeds: [new MessageEmbed()
-              .setColor(ee.color)
-              
-              .setTitle(`:x: Could not reload: \`${args[0]}\``)
+              .setColor(ee.color)             
+              .setTitle(`:x: Yeniden yüklenemedi: \`${args[0]}\``)
               .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : e.stack ? String(e.stack).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
             ]});
           }
@@ -53,15 +52,14 @@ module.exports = {
         return message.reply({embeds: [new MessageEmbed()
           .setColor(ee.wrongcolor)
           
-          .setTitle(`:x: Could not find: \`${args[0]}\``)
+          .setTitle(`:x: Yeniden yüklenemedi: \`${args[0]}\``)
         ]});
       }
     } catch (e) {
       console.log(String(e.stack).bgRed)
       return message.reply({embeds: [new MessageEmbed()
-          .setColor(ee.wrongcolor)
-          
-          .setTitle(`❌ ERROR | An error occurred`)
+          .setColor(ee.wrongcolor)  
+          .setTitle(`❌ Hata | Birşeyler ters gitti`)
           .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
       ]});
     }
