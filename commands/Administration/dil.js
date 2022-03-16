@@ -18,7 +18,9 @@ module.exports = {
 
   description: "Returns all Commmands, or one specific command", //the command description for helpcmd [OPTIONAL]
 
-  memberpermissions: [], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
+  memberpermissions: ["ADMINISTRATOR"], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
+
+  permissions: ["YÖNETİCİ"], // Buraya yetkinin türkçesini yazın.
 
   requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 
