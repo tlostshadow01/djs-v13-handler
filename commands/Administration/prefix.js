@@ -21,7 +21,7 @@
   minargs: 0, // minimum args for the message, 0 == none [OPTIONAL]
 
   maxargs: 0, // maximum args for the message, 0 == none [OPTIONAL]
-//aq
+
   minplusargs: 0, // minimum args for the message, splitted with "++" , 0 == none [OPTIONAL]
 
   maxplusargs: 0, // maximum args for the message, splitted with "++" , 0 == none [OPTIONAL]
@@ -117,9 +117,7 @@ Sıfırlamak İçin: **${prefix}ön-ek sıfırla**`
 
             .setColor(ee.wrongcolor)
 
-            .setFooter(ee.footertext, ee.footericon)
-
-            .setTitle(`❌ ERROR | An error occurred`)
+            .setTitle(`❌ Hata | Bir hata oluştu.`)
 
             .setDescription(`\`\`\`${e.message ? String(e.message).substr(0, 2000) : String(e).substr(0, 2000)}\`\`\``)
 
