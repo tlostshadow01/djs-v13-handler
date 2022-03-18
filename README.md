@@ -35,6 +35,7 @@
 
 > "Normal" Eğik çizgi komutları oluşturmak istiyorsanız, dosyaları hemen oluşturun. `./slashCommands`
 
+NOT: Bu altyapı benim değildir türkçeleştirilmiş ve üstüne kod eklenmiş halidir
 <br/>
 
 ***
