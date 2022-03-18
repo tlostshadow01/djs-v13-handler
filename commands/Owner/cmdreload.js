@@ -39,7 +39,7 @@ module.exports = {
             return message.reply({embeds: [new MessageEmbed()
               .setColor(ee.color)
              
-              .setTitle(`Reloaded: \`${args[0]}\``)
+              .setTitle(`Yeniden yüklendi: \`${args[0]}\``)
             ]});
           } catch (e) {
             return message.reply({embeds: [new MessageEmbed()
